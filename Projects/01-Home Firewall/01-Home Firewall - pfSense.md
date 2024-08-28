@@ -14,10 +14,12 @@ Once the download is completed is necessary to extract the compressed ISO and pr
 
 ### Copyright and Distribution Notice
 First we must to accept the "Copyright and distribution notice". After this we will start the installation of the firewall.
+
 ![01-Home Firewall - pfSense](00-Assets/01-Home%20Firewall%20-%20pfSense.png)
 
 ### Install pfSense
 Select the "Install" option and continue.
+
 ![01-Home Firewall - pfSense-1](00-Assets/01-Home%20Firewall%20-%20pfSense-1.png)
 
 ### Partitioning Disk

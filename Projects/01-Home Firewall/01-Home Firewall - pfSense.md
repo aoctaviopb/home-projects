@@ -116,6 +116,9 @@ pfSense let us add aliases that will help us with the administration of the netw
 
 
 
+
+<!--
+
 #### Rule 1 - Allow Request from Kali Host
 ![01-Home Firewall - pfSense-20](00-Assets/01-Home%20Firewall%20-%20pfSense-20.png)
 
@@ -213,7 +216,7 @@ curl -i 192.168.65.128
 
 
 
-
+  -->
 
 
 

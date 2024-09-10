@@ -115,121 +115,42 @@ pfSense let us add aliases that will help us with the administration of the netw
 - The alias "Kali" was assigned to the host with the IP address `192.168.65.128`
 
 ### Firewall Rules
-
-
-
-
-<!--
-
+Let's add some basic rules to our firewall.
 #### Rule 1 - Allow Request from Kali Host
+This rule will allow us to ping (ICMP protocol) our firewall from a Linux host in our network. In this example the Linux host is a virtual machine with IP address `192.168.650128`.
+
+- Action: Pass
+- Interface: WAN
+- Address Family: IPv4
+- Protocol: ICMP
+- Source: 192.168.65.128
+- Destination: This Firewall (self)
+
 ![01-Home Firewall - pfSense-20](00-Assets/01-Home%20Firewall%20-%20pfSense-20.png)
 
+After configuring this rule we can try to ping the firewall host from a Windows machine in the network (left) and from the Linux host (right). We can observe how from Windows the request is blocked but from Linux is executed.
 ![01-Home Firewall - pfSense-21](00-Assets/01-Home%20Firewall%20-%20pfSense-21.png)
 
 #### Rule 2 - Allow Request from Windows Host
+With this second rule, now we are going allow to ping the server from the Windows host with IP address `192.168.65.1`.
 
-
+- Action: Pass
+- Interface: WAN
+- Address Family: IPv4
+- Protocol: ICMP
+- Source: 192.168.65.1
+- Destination: This Firewall (self)
 
 ![01-Home Firewall - pfSense-22](00-Assets/01-Home%20Firewall%20-%20pfSense-22.png)
 
-
-![01-Home Firewall - pfSense-23](00-Assets/01-Home%20Firewall%20-%20pfSense-23.png)
-
-
-
+After pinging the firewall host from both hosts we can observe that in both of them the request was successfull.
 ![01-Home Firewall - pfSense-24](00-Assets/01-Home%20Firewall%20-%20pfSense-24.png)
 
-
-
-
-
+***
+In the "Rules" section of the firewall interface we can check that both rules are created and active.
+![01-Home Firewall - pfSense-23](00-Assets/01-Home%20Firewall%20-%20pfSense-23.png)
+If necessary, after applying a rule the interface will ask us to apply the changes.
 ![01-Home Firewall - pfSense-25](00-Assets/01-Home%20Firewall%20-%20pfSense-25.png)
-
-
-
-![01-Home Firewall - pfSense-26](00-Assets/01-Home%20Firewall%20-%20pfSense-26.png)
-
-
-![01-Home Firewall - pfSense-27](00-Assets/01-Home%20Firewall%20-%20pfSense-27.png)
-
-
-
-
-
-
-
-### Creating a Rule
-- https://www.zenarmor.com/docs/network-security-tutorials/how-to-configure-pfsense-firewall-rules#pfsense-firewall-rules-examples
-
-
-- https://www.youtube.com/watch?v=Vm98ofYp05g
-
-
-```shell
-Firewall host:
-192.168.65.130
-
-Kali host:
-192.168.65.128
-
-Windows host:
-192.168.65.1
-```
-
-
-
-
-![01-Home Firewall - pfSense-28](00-Assets/01-Home%20Firewall%20-%20pfSense-28.png)
-
-
-
-![01-Home Firewall - pfSense-29](00-Assets/01-Home%20Firewall%20-%20pfSense-29.png)
-
-
-
-#### Blocking a Malicious IP
-
-
-
-
-
-
-
-![01-Home Firewall - pfSense-30](00-Assets/01-Home%20Firewall%20-%20pfSense-30.png)
-
-
-
-![01-Home Firewall - pfSense-31](00-Assets/01-Home%20Firewall%20-%20pfSense-31.png)
-
-
-
-
-
-
-
-![01-Home Firewall - pfSense-32](00-Assets/01-Home%20Firewall%20-%20pfSense-32.png)
-
-
-
-
-```shell
-curl -i 192.168.65.128
-```
-
-
-
-  -->
-
-
-
-
-
-
-
-
-
-
-
 
 
 
